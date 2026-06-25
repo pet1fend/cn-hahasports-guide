@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>哈哈体育 · 日常与稳定 · 博客式介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf6f1;
+      font-family: "Georgia", "Times New Roman", "宋体", serif;
+      color: #2e2b27;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page {
+      max-width: 740px;
+      width: 100%;
+      background: #fffcf8;
+      padding: 2.8rem 2.2rem;
+      border-radius: 2px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 1rem 0.6rem;
+      }
+      .page {
+        padding: 1.8rem 1.2rem;
+      }
+    }
+
+    /* 文章标题区 */
+    .post-header {
+      margin-bottom: 2.2rem;
+      border-bottom: 1px solid #e7ddd0;
+      padding-bottom: 1.2rem;
+    }
+
+    .post-title {
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #2c241e;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+
+    .meta-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.85rem;
+      color: #8b7d70;
+      margin-top: 0.3rem;
+    }
+
+    .meta-line span {
+      background: #f2ece4;
+      padding: 0.1rem 0.7rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: #5c5147;
+    }
+
+    /* 导语 */
+    .lead {
+      font-size: 1.1rem;
+      color: #4b3f36;
+      background: #f6f0e9;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #b7a089;
+      font-style: normal;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* 正文段落 */
+    p {
+      margin-bottom: 1.4rem;
+      font-size: 1rem;
+      color: #3d352e;
+    }
+
+    /* 引用提示块 —— 类似便签/提示框 */
+    .note-box {
+      background: #efe8df;
+      padding: 1.2rem 1.6rem;
+      margin: 2rem 0 1.8rem 0;
+      border-radius: 2px;
+      position: relative;
+      font-size: 0.98rem;
+      color: #2b231d;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .note-box::before {
+      content: "📌 提示";
+      display: block;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #7f6b59;
+      margin-bottom: 0.4rem;
+    }
+
+    /* 第二个引用块风格不同 */
+    .pull-quote {
+      font-style: italic;
+      border-left: 3px solid #c6b3a0;
+      padding: 0.5rem 1.2rem 0.5rem 1.8rem;
+      margin: 1.6rem 0;
+      background: #f8f3ec;
+      color: #52463b;
+      font-size: 1.02rem;
+    }
+
+    .pull-quote strong {
+      font-weight: 500;
+      color: #2d221b;
+      font-style: normal;
+    }
+
+    .faq-summary {
+      margin: 2.2rem 0 1rem 0;
+    }
+
+    .faq-summary h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2f2822;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.3px;
+      border-bottom: 1px dashed #dbcfc0;
+      padding-bottom: 0.3rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.9rem;
+      padding-left: 0.8rem;
+    }
+
+    .faq-item strong {
+      display: inline-block;
+      font-weight: 500;
+      color: #4c3d31;
+      margin-right: 0.4rem;
+    }
+
+    .faq-item span {
+      color: #5f5245;
+    }
+
+    /* 链接样式 */
+    a {
+      color: #7d5f48;
+      text-decoration: none;
+      border-bottom: 1px dotted #b7a089;
+      transition: border-bottom 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #4f392a;
+      border-bottom: 1px solid #7d5f48;
+    }
+
+    .visit-line {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e4d9cc;
+      font-size: 0.95rem;
+      color: #5d5146;
+      text-align: center;
+    }
+
+    .visit-line a {
+      border-bottom: 1px solid #b7a089;
+    }
+
+    /* 小字版权/伪日期 仅装饰 */
+    .footer-note {
+      margin-top: 2.8rem;
+      font-size: 0.75rem;
+      color: #ab9b8b;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e3d8cb;
+      margin: 1.8rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 文章标题区 -->
+  <div class="post-header">
+    <h1 class="post-title">平凡日子里的稳定入口</h1>
+    <div class="meta-line">
+      <span>记一个安静的页面</span>
+      <span>偶尔翻到 · 随感</span>
+    </div>
+  </div>
+
+  <!-- 导语 -->
+  <div class="lead">
+    我不太喜欢花哨的引导页，更倾向一个能安静落脚的起点。<br>
+    这里没有什么弹窗或催促，只有一行地址、几段文字，和一个你或许会需要的名字。
+  </div>
+
+  <!-- 正文段落 -->
+  <p>
+    前几天整理浏览器书签，发现收藏夹里躺着好几个体育类站点，有的已经打不开，有的改版后面目全非。反倒是一个叫<strong>哈哈体育</strong>的页面，域名没变，界面也一直保持简洁。我顺手点进去看了看，首页没有铺满的广告，也没有自动播放的视频，就是干干净净的几个板块，像一个老朋友保留着原来的钥匙。
+  </p>
+
+  <p>
+    后来我渐渐养成一个习惯：想找点比赛资讯或者只是想随便刷刷体育新闻时，会直接输入那串熟悉的网址。那种“知道自己要去哪，而且门一直开着”的感觉，在如今这个每天换一个链接的时代里，竟然有点奢侈。稳定，大概就是每次输入同样的地址，看到同样的布局，哪怕内容在更新，底色始终没变。
+  </p>
+
+  <!-- 引用提示块 1 -->
+  <div class="note-box">
+    如果你也在找一个不折腾、不绕路的体育信息入口，不妨把 <a href="https://cn-hahasports.com">哈哈体育</a> 放进书签栏。至少对我来说，它意味着少一次搜索、多一份踏实。
+  </div>
+
+  <p>
+    当然，每个人对“好用”的定义不同。有人喜欢社区里热闹的讨论，有人需要实时滚动的比分，还有人只想要干净的赛程表。<strong>哈哈体育</strong> 属于哪一种？我觉得它更像一个“综合但克制”的存在——该有的资讯基本都有，但不强推、不频繁弹窗。这种分寸感，在如今的设计里其实不多见。
+  </p>
+
+  <!-- 第二个引用块 (风格不同) -->
+  <div class="pull-quote">
+    “很多时候我们需要的不是一个更酷的页面，而是一个不会突然消失的地址。”<br>
+    <strong>—— 一位常看体育的朋友这样说</strong>
+  </div>
+
+  <p>
+    这让我想起另一个细节：有些网站喜欢把入口藏得很深，或者每次访问都跳转到不同的子域名。而 <a href="https://cn-hahasports.com">哈哈体育</a> 的主页一直保持着直观的导航，从“首页”到各分类，逻辑清楚，不需要用户去猜。也许这算不上什么了不起的创新，但生活的幸福感往往就来自这些“不用动脑子”的时刻。
+  </p>
+
+  <!-- FAQ 摘要（简洁克制） -->
+  <div class="faq-summary">
+    <h3>一些你可能想问的 · 简短版</h3>
+    <div class="faq-item">
+      <strong>Q：</strong><span>这个站主要看什么？</span><br>
+      <strong>A：</strong><span>综合体育资讯，比分、赛程、新闻都有，界面偏传统但够用。</span>
+    </div>
+    <div class="faq-item">
+      <strong>Q：</strong><span>需要注册才能浏览吗？</span><br>
+      <strong>A：</strong><span>大部分内容直接可见，没有强制登录的墙。</span>
+    </div>
+    <div class="faq-item">
+      <strong>Q：</strong><span>手机打开体验如何？</span><br>
+      <strong>A：</strong><span>响应式布局，在手机浏览器里排版也没有变形，操作顺手。</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 访问句 (自然嵌入链接) -->
+  <div class="visit-line">
+    如果你也喜欢这种不吵不闹的风格，可以直接在浏览器地址栏输入 <a href="https://cn-hahasports.com">哈哈体育</a>，它一直在那里。
+  </div>
+
+  <!-- 底部装饰 -->
+  <div class="footer-note">
+    写于一个不需要打鸡血的下午 · 慢就是稳
+  </div>
+
+</div>
+</body>
+</html>
